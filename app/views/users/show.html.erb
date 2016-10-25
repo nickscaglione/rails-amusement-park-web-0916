@@ -1,0 +1,16 @@
+<h3>Name: <%= @user.name %></h3>
+
+<li>Your nausea rating: <%=@user.nausea %></li>
+<li>Your happiness: <%=@user.happiness %></li>
+<li>You have <%=@user.tickets %> tickets</li>
+<li>You are <%=@user.height %> inches tall</li>
+
+<h4>Rides:</h4>
+<% @user.attractions.each do |attraction| %>
+<li><%= attraction.name %></li>
+<%end%>
+<br>
+
+<%= link_to edit_user_path(@user) do %>
+<%= submit_tag "Edit" %>
+<% end %>

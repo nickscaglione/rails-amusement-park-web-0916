@@ -1,0 +1,17 @@
+<h3>Name: <%= @attraction.name %></h3>
+<li>Ticket Requirement <%=@attraction.tickets %>:</li>
+<li>Height Requirement <%=@attraction.min_height %>: inches</li>
+<li>Nausea Rating <%=@attraction.nausea_rating %>: </li>
+<li>Happiness Rating <%=@attraction.happiness_rating%>:</li>
+
+
+
+<%= form_tag("/attractions/#{@attraction.id}/add_user") do %>
+<%= submit_tag "Take Ride" %>
+<% end %>
+
+
+
+<%= link_to edit_attraction_path(@attraction) do %>
+<%= submit_tag "Edit" %>
+<% end %>

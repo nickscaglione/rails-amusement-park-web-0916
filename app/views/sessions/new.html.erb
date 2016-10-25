@@ -1,0 +1,10 @@
+<%= form_tag '/sessions' do %>
+
+  <select name="name">
+    <% @users.each do |user| %>
+      <option value=<%= user.name %>><%= user.name %></option>
+    <% end %>
+  </select>
+  <%= password_field_tag :password, nil, placeholder: "Password" %>
+  <%= submit_tag "Sign In" %>
+<% end %>
